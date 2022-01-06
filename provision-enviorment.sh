@@ -6,7 +6,7 @@
 # Get IPV4 address, HOME DIR and ssh port  (Create VARS)
         usrdir=$(eval echo ~$USER) 
         usr=$(eval echo ~$USER | cut -d "/" -f3)       
-        ip=$(ifconfig | grep 'inet 192.168.' | cut -d "t" -f2 | cut -c 2-12)
+        ip=$(ifconfig | grep 'inet 192.168.' | cut -d "t" -f2 | cut -c 2-13)
         sshport=$(service sshd status | grep 'Server listening on :: port' | cut -c 75-78)
 
 
