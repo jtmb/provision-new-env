@@ -57,9 +57,7 @@
             sudo apt-get install docker-ce docker-ce-cli containerd.io -y
    
     # Get IPV4 address
-        echo
-        echo
-        echo
+    
         echo
         echo
         echo -------- IPV4 Address --------
@@ -67,6 +65,9 @@
         ifconfig | grep 'inet 192.168.'
         echo
         echo
+        echo -------- SSH Port --------
+        echo
+        service sshd status | grep 'Server listening on :: port'
         echo
         echo
         echo
