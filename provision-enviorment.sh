@@ -3,6 +3,13 @@
 #          Made by: James Branco (JTMB)
 
 
+# Get IPV4 address, HOME DIR and ssh port  (Create VARS)
+        usrdir=$(eval echo ~$USER) 
+        usr=$(eval echo ~$USER | cut -d "/" -f3)       
+        ip=$(ifconfig | grep 'inet 192.168.' | cut -d "t" -f2 | cut -c 1-12)
+        sshport=$(service sshd status | grep 'Server listening on :: port' | cut -c 75-78)
+
+
     # Update Host OS
 
         # Updates and installs OS then cleans leftover files (linux debian)
@@ -27,7 +34,7 @@
             sudo ufw allow 2002/tcp
         
         # Move SSH Config to default SSH config location and restart SSH service
-            sudo cp /home/james/provision-new-env/sshd_config /etc/ssh/sshd_config
+            sudo cp $usrdir/provision-new-env/sshd_config /etc/ssh/sshd_config
             systemctl restart sshd
         
 
@@ -46,7 +53,7 @@
         
         # Add Docker’s official GPG key
             curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-y
+yy
         # Set up the stable repository
             echo \
             "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
@@ -56,16 +63,13 @@ y
             sudo apt-get update
             sudo apt-get install docker-ce docker-ce-cli containerd.io -y
    
-    # Get IPV4 address and ssh port  (Create VARS)
-        usr=$(whoami)        
-        IP=$(ifconfig | grep 'inet 192.168.' | cut -d "t" -f2 | cut -c 1-12)
-        sshport=$(service sshd status | grep 'Server listening on :: port' | cut -c 75-78)
 
 
-        echo
-        echo
-        echo -------- IPV4 Address + SSH --------
-        echo
-        echo $usr@$ip:$sshport
-        echo
-        echo
+     # Print on screen VARS in an ssh connect format 
+            echo
+            echo
+            echo -------- IPV4 Address + SSH --------
+            echo
+            echo $usr@$ip:$sshport
+            echo
+            echo
