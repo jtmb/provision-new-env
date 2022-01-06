@@ -71,6 +71,6 @@
             echo
             echo -------- IPV4 Address + SSH Port --------
             echo
-            echo -e "        $ip:$sshport"
+            echo -e "         $ip:$sshport"
             echo
             echo
