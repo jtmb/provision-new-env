@@ -67,12 +67,12 @@ yy
 
      # Print on screen VARS in an ssh connect format 
 
-            usr=$(eval echo ~$USER | cut -d "/" -f3)
+            usr=$()
      
             echo
             echo
             echo -------- IPV4 Address + SSH --------
             echo
-            echo -e       "$usr@$ip:$sshport"
+            echo -e "        $ip:$sshport"
             echo
             echo
