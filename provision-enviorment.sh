@@ -66,6 +66,9 @@ yy
 
 
      # Print on screen VARS in an ssh connect format 
+
+            usr=$(eval echo ~$USER | cut -d "/" -f3)
+     
             echo
             echo
             echo -------- IPV4 Address + SSH --------
