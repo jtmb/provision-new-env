@@ -57,4 +57,16 @@
             sudo apt-get install docker-ce docker-ce-cli containerd.io -y
    
     # Get IPV4 address
+        echo
+        echo
+        echo
+        echo
+        echo
+        echo -------- IPV4 Address --------
+        echo        
         ifconfig | grep 'inet 192.168.'
+        echo
+        echo
+        echo
+        echo
+        echo
