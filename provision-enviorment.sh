@@ -16,8 +16,8 @@
 
         # Install net tools
             sudo apt install net-tools -y
-        # Install IP2
-            sudo apt install ip2 -y
+        # Install Ansible
+            sudo apt install ansible -y
 
     # Install OpenSSH
 
