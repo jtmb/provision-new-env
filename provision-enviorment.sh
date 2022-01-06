@@ -25,6 +25,8 @@
             sudo apt install net-tools -y
         # Install Ansible
             sudo apt install ansible -y
+        # Install SSHpass
+            sudo apt install sshpass -y
 
     # Install OpenSSH
 
