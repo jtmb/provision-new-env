@@ -46,7 +46,7 @@
         
         # Add Docker’s official GPG key
             curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
+y
         # Set up the stable repository
             echo \
             "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
@@ -56,18 +56,16 @@
             sudo apt-get update
             sudo apt-get install docker-ce docker-ce-cli containerd.io -y
    
-    # Get IPV4 address
-    
+    # Get IPV4 address and ssh port  (Create VARS)
+        usr=$(whoami)        
+        IP=$(ifconfig | grep 'inet 192.168.' | cut -d "t" -f2 | cut -c 1-12)
+        sshport=$(service sshd status | grep 'Server listening on :: port' | cut -c 75-78)
+
+
         echo
         echo
-        echo -------- IPV4 Address --------
-        echo        
-        ifconfig | grep 'inet 192.168.'
+        echo -------- IPV4 Address + SSH --------
         echo
-        echo
-        echo -------- SSH Port --------
-        echo
-        service sshd status | grep 'Server listening on :: port'
-        echo
+        echo $usr@$ip:$sshport
         echo
         echo
