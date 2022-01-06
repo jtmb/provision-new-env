@@ -6,7 +6,7 @@
     # Update Host OS
 
         # Updates and installs OS then cleans leftover files (linux debian)
-            apt-get update
+            apt-get update -y
             apt-get upgrade -y
             apt-get dist-upgrade -y
             apt-get autoremove -y
@@ -15,14 +15,14 @@
     # Install Packages
 
         # Install net tools
-            sudo apt install net-tools
+            sudo apt install net-tools -y
         # Install IP2
-            sudo apt install ip2
+            sudo apt install ip2 -y
 
     # Install OpenSSH
 
         # Installs , enables openSSH , forwards required ports (22, 2002/tcp)
-            sudo apt install openssh-server
+            sudo apt install openssh-server -y
             sudo ufw allow ssh
             sudo ufw allow 2002/tcp
         
@@ -54,7 +54,7 @@
 
         # Install Docker Engine
             sudo apt-get update
-            sudo apt-get install docker-ce docker-ce-cli containerd.io
+            sudo apt-get install docker-ce docker-ce-cli containerd.io -y
    
     # Get IPV4 address
         ifconfig | grep 'inet 192.168.'
