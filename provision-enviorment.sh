@@ -73,6 +73,6 @@ yy
             echo
             echo -------- IPV4 Address + SSH --------
             echo
-            echo          "$usr@$ip:$sshport"
+            echo -e       "$usr@$ip:$sshport"
             echo
             echo
