@@ -38,6 +38,7 @@
         # Move SSH Config to default SSH config location and restart SSH service
             sudo cp $usrdir/provision-new-env/sshd_config /etc/ssh/sshd_config
             systemctl restart sshd
+            mkdir -p ~/.ssh
         
 
     # Install Docker
