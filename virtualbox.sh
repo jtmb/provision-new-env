@@ -1,3 +1,8 @@
+# purge old versions
+sudo apt remove virtualbox
+sudo apt purge virtualbox
+
+# Build Virtualbox
 sudo apt-get update
 sudo apt install virtualbox
 sudo apt install virtualbox-ext-pack
