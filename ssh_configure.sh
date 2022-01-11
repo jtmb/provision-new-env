@@ -11,4 +11,4 @@
             systemctl restart sshd
             
         # Add SSH dir
-#            mkdir ~/.ssh
+            mkdir ~/.ssh
