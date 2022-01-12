@@ -12,7 +12,7 @@ sudo apt-get dist-upgrade -y
 
 # fix Broken packages -f 
 sudo apt-get -f install -y
-sudo dpkg --configure -a -y
+sudo dpkg --configure -a
 
 # Remove lock
 # If you are absolutely sure you do not have another upgrade process running.
