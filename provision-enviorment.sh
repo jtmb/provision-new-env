@@ -65,6 +65,10 @@
         # Install Docker Engine
             sudo apt-get update
             sudo apt-get install docker-ce docker-ce-cli containerd.io -y
+
+
+        # Install Endless SSH honeypot on port 22 in docker container (from script)
+            sudo bash endlessh.sh
    
 
 
