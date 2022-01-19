@@ -39,7 +39,11 @@
             sudo cp $usrdir/provision-new-env/sshd_config /etc/ssh/sshd_config
             systemctl restart sshd
             mkdir -p ~/.ssh
-        
+  
+  
+   # Install fail2ban
+        sudo apt install fail2ban -y
+ 
 
     # Install Docker
         
